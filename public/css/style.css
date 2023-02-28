@@ -1,0 +1,59 @@
+body {
+    background-image: url('/img/back.jpg');
+    background-size: cover;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    align-content: center;
+}
+
+h1 {
+        margin-top: 20px;
+        font-size: 25px;
+        padding: 15px;
+        text-align: center;
+}
+
+img{
+    width: 300px;
+    height: auto;
+    display: flex;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.texto {
+    margin: auto;
+    width: 500px;
+    height: 370px;
+    border-radius: 54px;
+    background-color: #1E2D4B;
+    align-items: center;
+    
+}
+
+.container {
+    margin: auto;
+}
+
+.form-control {
+    margin: auto;
+    width: 350px;
+    border-radius: 0px 40px 40px 0px;
+}
+
+.lock {
+    background-color: #FAB628;
+    display: flex;
+    margin: auto;
+    align-content: center;
+    width: 45px;
+    height: 40px;
+}
+
+.lock img {
+    width: 45px;
+    height: 45px;
+    padding: 0px;
+    margin-top: -3px
+}
