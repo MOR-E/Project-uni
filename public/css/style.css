@@ -1,4 +1,5 @@
-body {
+/* css do corpo da pagina*/
+body { 
     background-image: url('/img/back.jpg');
     background-size: cover;
     color: white;
@@ -6,6 +7,7 @@ body {
     align-content: center;
 }
 
+/*TITULO DO NAP*/
 h1 {
         margin-top: 20px;
         font-size: 25px;
@@ -13,6 +15,7 @@ h1 {
         text-align: center;
 }
 
+/*IMAGEM DE LGO DO NAP*/
 img{
     width: 300px;
     height: auto;
@@ -22,6 +25,7 @@ img{
     margin-bottom: 2%;
 }
 
+/* DIV CENTRAL COM OS BLOCOS*/
 .texto {
     margin: auto;
     width: 500px;
@@ -36,24 +40,60 @@ img{
     margin: auto;
 }
 
+/* INPUTS DE USUARIO E SUAS BORDAS*/
 .form-control {
     margin: auto;
     width: 350px;
     border-radius: 0px 40px 40px 0px;
 }
 
-.lock {
+/*IMAGENS DE ICONES*/
+.usuario {
     background-color: #FAB628;
     display: flex;
-    margin: auto;
+    margin-left: 120px;
     align-content: center;
     width: 45px;
-    height: 40px;
+    height: 38px;
 }
 
-.lock img {
+.senha {
+    background-color: #FAB628;
+    display: flex;
+    margin-left: 120px;
+    align-content: center;
+    width: 45px;
+    height: 38px;
+}
+
+.usuario .senha img {
     width: 45px;
     height: 45px;
     padding: 0px;
     margin-top: -3px
+}
+
+/*BOTÃO DE ACESSAR*/
+#botao   {
+
+    margin-top: 20px;
+    margin-left: 210px;
+    background-color: #456AB4;
+    border-radius: 45%;   
+}
+
+/*esqueceu a senha*/
+.esquecido{
+
+    margin-top: 25px;
+    margin-left: 163px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    margin: auto;
+}
+
+a:hover {
+    text-decoration: underline;
 }

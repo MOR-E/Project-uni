@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
     res.render("start/login")
 });  
 
-app.listen(8000, ()=>{
+app.listen(8001, ()=>{
     console.log("aplicação rodando!")
 })
 
