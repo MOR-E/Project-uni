@@ -3,6 +3,13 @@ const app = express();
 const connection = require("./database/database");
 const bodyParser = require("body-parser");
 
+//Controllers
+const homeController = require("./routes/HomeController")
+const fichaController = require("./routes/FichaAnaController");
+const prontuarioController = require("./routes/Pronturario");
+const historicoController = require("./routes/HistoricoController");
+
+
 //View Engine
 app.set('view engine', 'ejs');
 
@@ -24,6 +31,14 @@ connection
     })
 
 
+app.use("/", homeController);    
+
+app.use("/", fichaController);   
+
+app.use("/", prontuarioController);   
+
+app.use("/", historicoController);   
+
 app.get("/", (req, res) => {
     res.render("start/login")
 });  
@@ -31,6 +46,6 @@ app.get("/", (req, res) => {
 
 
 app.listen(8001, ()=>{
-    console.log("aplicação rodando!")
+    console.log("Aplicação rodando!")
 })
 

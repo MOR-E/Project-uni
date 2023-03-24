@@ -1,3 +1,35 @@
+/* NAVBAR */
+header, .navbar {
+    background-color: #456AB4;
+}
+
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#logo {
+    width: 95px;
+}
+
+.navbar-brand {
+    padding: 0;
+    color: #fff;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+navbar-links a {
+    color: #fff;
+}
+
+navbar-expand-lg .navbar-nav .nav0link {
+    padding: 1rem .8rem;
+}
+
+
 /* css do corpo da pagina*/
 body { 
     background-image: url('/img/back.jpg');
@@ -21,7 +53,7 @@ img{
     height: auto;
     display: flex;
     margin: auto;
-    margin-top: 4%;
+    margin-top: -2%;
     margin-bottom: 2%;
 }
 
@@ -37,7 +69,8 @@ img{
 }
 
 .container {
-    margin: auto;
+  
+    padding: 70px 0;
 }
 
 /* INPUTS DE USUARIO E SUAS BORDAS*/
@@ -79,7 +112,7 @@ img{
     margin-top: 20px;
     margin-left: 210px;
     background-color: #456AB4;
-    border-radius: 45%;   
+    border-radius: 25%;   
 }
 
 /*esqueceu a senha*/
@@ -96,4 +129,14 @@ a{
 
 a:hover {
     text-decoration: underline;
+}
+
+/*Pagina index principal*/
+
+.bg-index {
+    background-image: url(/img/apoio_psicologico.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
