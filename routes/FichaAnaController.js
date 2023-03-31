@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/fichaana", (req, res) => {
-    res.send("Ficha de Anamnese!");
+    res.render("Anamnese/index");
 });
 
 module.exports = router;

@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 //Controllers
 const homeController = require("./routes/HomeController")
 const fichaController = require("./routes/FichaAnaController");
-const prontuarioController = require("./routes/Pronturario");
+const prontuarioController = require("./routes/PronturarioController");
 const historicoController = require("./routes/HistoricoController");
 
 
