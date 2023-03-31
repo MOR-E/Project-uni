@@ -30,6 +30,7 @@ navbar-expand-lg .navbar-nav .nav0link {
 }
 
 
+
 /* css do corpo da pagina*/
 body { 
     background-image: url('/img/back.jpg');
@@ -139,4 +140,9 @@ a:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
+}
+
+.card-header {
+    background-color: #FAB628;
+    color: black;
 }
