@@ -9,6 +9,11 @@ const fichaController = require("./routes/FichaAnaController");
 const prontuarioController = require("./routes/PronturarioController");
 const historicoController = require("./routes/HistoricoController");
 
+//Models
+const Anamnese = require("./models/Anamnese");
+const Prontuario = require("./models/Prontuario");
+const Administrador = require("./models/Administrador");    
+
 
 //View Engine
 app.set('view engine', 'ejs');
