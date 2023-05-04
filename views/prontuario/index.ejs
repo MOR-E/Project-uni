@@ -1,20 +1,41 @@
 <%- include('../partials/header.ejs'); %>
 <%- include('../partials/navbar.ejs'); %>
 
-<div class="container">
-    <form action="">
-        <br>
-        <div class="card">
-            <div class="card-header">
-                <h2>Ficha de pronturario</h2>
-            </div>
-            <div class="card-body">
+<div class="container" style="box-sizing: border-box;">
+    <div class="card-header" style="width: 330px;margin: 10px 0px 10px 0px; border-radius: 7%;">
+        <h2>Ficha de pronturario</h2>
+    </div>
+        <div class="card" style="border:none;">
+            <div class="card-body" id="fundo_prontuario">
                 <form action="" method="POST">
+                    <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: ">
+                    <br>
+                    <div style="display: flex;">
+                        <input class="form-control" type="date" name="data_atendimento" placeholder="Data de atendimento">
+                        <input class="form-control" type="text" name="Responsavel pelo atendimento" placeholder="Responsavel pelo atendimento">
+                    </div>
+                    <br>
+                    <textarea name="corpo" id="descricao" cols="30" rows="10" class="form-control" placeholder="Descrição do atendimento"></textarea>
+                    <br>
+                    <button class="btn btn-success" id="botão_cadastro">Cadastrar</button>
                 </form>
             </div>
         </div>
-        <button class="btn btn-success">Cadastrar</button>
-    </form>
+        <br>
+        
 </div>
 
 <%- include('../partials/footer.ejs'); %>
+
+<script src="../../tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#descricao",
+        plugins: [
+            'advlists autolink link image lists print preview hr searchreplace wordcount fullscream insertdatetime media save table paste emoticons'
+        ]
+    });
+
+</script>

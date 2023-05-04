@@ -75,7 +75,7 @@ img{
 }
 
 /* INPUTS DE USUARIO E SUAS BORDAS*/
-.form-control {
+#formulario_cadastro {
     margin: auto;
     width: 350px;
     border-radius: 0px 40px 40px 0px;
@@ -145,4 +145,15 @@ a:hover {
 .card-header {
     background-color: #FAB628;
     color: black;
+}
+
+/*PRONTUARIO*/
+
+#fundo_prontuario {
+    background-color: #1E2D4B;
+}
+
+#botão_cadastro {
+    width: 120px;
+    height: 60px;
 }

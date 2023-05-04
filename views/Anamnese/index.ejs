@@ -2,16 +2,71 @@
 <%- include('../partials/navbar.ejs'); %>
 
 <div class="container">
-    <br>
-    <div class="card">
-        <div class="card-header">
-            <h2>Ficha de Anamnese</h2>
-        </div>
-        <div class="card-body">
-            <form action="" method="POST">
-            </form>
-        </div>
+    <div class="card-header" style="width: 330px;margin: 10px 0px 10px 0px; border-radius: 7%;">
+        <h2>Ficha de Anamnese</h2>
     </div>
+        <div class="card" style="border:none; border-radius: 7%;">
+            <div class="card-body" id="fundo_prontuario">
+                <form action="" method="POST">
+                    <br>
+                    <p style="margin: 0px;">Data de atendimento</p>
+                    <div style="display: flex;">
+                        
+                        <input class="form-control" type="date" name="data_atendimento" placeholder="Data de atendimento" style="margin-right: 10px;">
+                        <input class="form-control" type="text" name="Responsavel pelo atendimento" placeholder="Responsavel pelo atendimento">
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: " style="margin-right: 10px;">
+                        <input class="form-control" type="number" name="idade_paciente" placeholder="Idade do paciente">
+                    </div>
+                    <br>
+                    <input type="text" class="form-control" name="Curso_paciente" placeholder="Curso">
+                    <br>
+                    <input type="email" class="form-control" name="Email_paciente" placeholder="Email">
+                    <br>
+                    <p style="margin: 0px;">Data de nascimento</p>
+                    <div style="display: flex; ">
+                        <input type="date" class="form-control" name="data_nascimento" placeholder="Data de nascimento" style="margin-right: 10px;">
+                        <input class="form-control" type="number" name="idade_paciente" placeholder="Telefone">
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: " style="margin-right: 10px;">
+                        <input class="form-control" type="number" name="Período/turno" placeholder="Idade do paciente">
+                    </div>
+                    <br>
+                    <p style="margin: 0px;">Descrição do motivo</p>
+                    <textarea name="corpo" id="descricao_motivo" cols="30" rows="10" class="form-control" placeholder="Descrição do motivo"></textarea>
+                    <br>
+                    <p style="margin: 0px;">Histórico(uso da medicação, faz psicoterapia,etc...)</p>
+                    <textarea name="corpo" id="historico_geral" cols="30" rows="10" class="form-control" placeholder="Histórico(uso da medicação, faz psicoterapia,etc...)"></textarea>
+                    <br>
+                    <p style="margin: 0px;">Histórico Familiar</p>
+                    <textarea name="corpo" id="historico_familiar" cols="30" rows="10" class="form-control" placeholder="Historico Familiar"></textarea>
+                    <br>
+                    <p style="margin: 0px;">Relação Familiar</p>
+                    <textarea name="corpo" id="relação_familiar" cols="30" rows="10" class="form-control" placeholder="Relação Familiar"></textarea>
+                    <br>
+                    <button class="btn btn-success" id="botão_cadastro">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        
 </div>
+
+<script src="../../tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#descricao_motivo, #historico_geral, #historico_familiar, #relação_familiar",   
+        plugins: [
+            'advlists autolink link image lists print preview hr searchreplace wordcount fullscream insertdatetime media save table paste emoticons'
+        ]
+    });
+
+</script>
 
 <%- include('../partials/footer.ejs'); %>

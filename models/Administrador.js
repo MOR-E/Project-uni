@@ -3,7 +3,7 @@ const connection = require("../database/database");
 const Anamnese = require("./Anamnese");
 const Prontuario = require("./Prontuario");
 
-const Administrador = connection.definte('administrador', {
+const Administrador = connection.define('admin', {
     usuario:{
         type: Sequelize.STRING,
         allowNull: false
@@ -22,8 +22,8 @@ Administrador.hasMany(Anamnese);
 
 Administrador.hasMany(Prontuario);
 
-Administrador.sync({force: true});
-Anamnese.sync({force: true});
-Prontuario.sync({force: true});
+//Administrador.sync({force: true});
+//Anamnese.sync({force: true});
+//Prontuario.sync({force: true});
 
-modelo.exports = Administrador;
+module.exports = Administrador;

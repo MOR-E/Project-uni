@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const connection = require("../database/database");
 
-const Prontuario = connection.define('anamnese', {
+const Prontuario = connection.define('prontuario', {
     nome_paciente:{
         type: Sequelize.STRING,
         allowNull: false
