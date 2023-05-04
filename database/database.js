@@ -1,12 +1,12 @@
 const Sequelize = require("sequelize");
 
-const connection = new Sequelize('moreiraprojeto','root','abc@123', {
+const connection = new Sequelize('moreiraprojeto','aluno','123456', {
     host:'localhost',
     dialect: 'mysql'
 });
 
 module.exports =  connection;
 
-// aluno
+// root
 
-// 123456
+//  abc@123

@@ -51,4 +51,6 @@ const Anamnese = connection.define('anamnese', {
     
 })
 
+//Anamnese.sync({force: true})
+
 module.exports = Anamnese;

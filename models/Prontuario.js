@@ -18,4 +18,6 @@ const Prontuario = connection.define('prontuario', {
     }
 })
 
+//Prontuario.sync({force: true})
+
 module.exports = Prontuario;
