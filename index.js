@@ -8,7 +8,7 @@ const homeController = require("./routes/HomeController")
 const fichaController = require("./routes/FichaAnaController");
 const prontuarioController = require("./routes/PronturarioController");
 const historicoController = require("./routes/HistoricoController");
-const UsuarioConstroller = require("./user/UsuarioController")
+const adminConstroller = require("./routes/adminController")
 
 //Models
 const Anamnese = require("./models/Anamnese");
@@ -45,7 +45,7 @@ app.use("/", prontuarioController);
 
 app.use("/", historicoController);   
 
-app.use("/", UsuarioConstroller)
+app.use("/", adminConstroller)
 
 app.get("/", (req, res) => {
     res.render("usuario/login")
