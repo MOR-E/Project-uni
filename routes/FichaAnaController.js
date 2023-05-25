@@ -5,4 +5,6 @@ router.get("/fichaana", (req, res) => {
     res.render("Anamnese/index");
 });
 
+
+
 module.exports = router;

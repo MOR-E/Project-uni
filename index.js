@@ -10,10 +10,12 @@ const prontuarioController = require("./routes/PronturarioController");
 const historicoController = require("./routes/HistoricoController");
 const adminConstroller = require("./routes/adminController")
 
+
 //Models
 const Anamnese = require("./models/Anamnese");
 const Prontuario = require("./models/Prontuario");
-const Administrador = require("./models/Administrador");    
+const Administrador = require("./models/Administrador"); 
+
 
 
 //View Engine
@@ -46,6 +48,7 @@ app.use("/", prontuarioController);
 app.use("/", historicoController);   
 
 app.use("/", adminConstroller)
+
 
 app.get("/", (req, res) => {
     res.render("usuario/login")

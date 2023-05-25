@@ -4,7 +4,7 @@ const Anamnese = require("./Anamnese");
 const Prontuario = require("./Prontuario");
 
 const Administrador = connection.define('admin', {
-    usuario:{
+    email:{
         type: Sequelize.STRING,
         allowNull: false
     },
