@@ -17,9 +17,6 @@ const Anamnese = connection.define('anamnese', {
     },usuario:{
         type: Sequelize.STRING,
         allowNull: false
-    },descricao:{
-        type: Sequelize.STRING,
-        allowNull: false
     },historico:{
         type: Sequelize.STRING,
         allowNull: false

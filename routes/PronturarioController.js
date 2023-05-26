@@ -10,14 +10,14 @@ router.post("/prontuario/salvar", (req, res) => {
     var nome_paciente = req.body.nome_paciente;
     var data_atendimento = req.body.data_atendimento;
     var responsavel_atendimento = req.body.responsavel_atendimento;
-    var corpo = req.body.corpo;
+    var descricao = req.body.descricao;
 
 
     Prontuario.create({
         nome_paciente: nome_paciente,
         data_atendimento: data_atendimento,
         responsavel_atendimento: responsavel_atendimento,
-        corpo: corpo,
+        descricao: descricao,
 
     }).then(() => {
         res.redirect("/home");
