@@ -9,46 +9,45 @@
             <div class="card-body" id="fundo_prontuario">
                 <form action="/anamnese/salvar" method="POST">
                     <br>
-                    <p style="margin: 0px;">Data de atendimento</p>
-                    <div style="display: flex;">
-                        
-                        <input class="form-control" type="date" name="data_atendimento" placeholder="Data de atendimento" style="margin-right: 10px;">
-                        <input class="form-control" type="text" name="Responsavel pelo atendimento" placeholder="Responsavel pelo atendimento">
-                    </div>
-                    <br>
                     <div style="display: flex;">
                         <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: " style="margin-right: 10px;">
                         <input class="form-control" type="number" name="idade_paciente" placeholder="Idade do paciente">
                     </div>
                     <br>
-                    <input type="text" class="form-control" name="Curso_paciente" placeholder="Curso">
+                    <p style="margin: 0px;">Data de atendimento</p>
+                    <div style="display: flex;">
+                        <input class="form-control" type="date" name="data_atendimento" placeholder="Data de atendimento" style="margin-right: 10px;">
+                        <input class="form-control" type="text" name="responsavel_atendimento" placeholder="Responsavel pelo atendimento">
+                    </div>
                     <br>
-                    <input type="email" class="form-control" name="Email_paciente" placeholder="Email">
+                    <input type="text" class="form-control" name="curso_paciente" placeholder="Curso">
+                    <br>
+                    <input type="email" class="form-control" name="email_paciente" placeholder="Email">
                     <br>
                     <p style="margin: 0px;">Data de nascimento</p>
                     <div style="display: flex; ">
                         <input type="date" class="form-control" name="data_nascimento" placeholder="Data de nascimento" style="margin-right: 10px;">
-                        <input class="form-control" type="number" name="idade_paciente" placeholder="Telefone">
+                        <input class="form-control" type="number" name="telefone" placeholder="Telefone">
                     </div>
                     <br>
                     <div style="display: flex;">
-                        <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: " style="margin-right: 10px;">
-                        <input class="form-control" type="number" name="turno" placeholder="Período/turno">
+                        <input type="text" class="form-control" name="encaminhado" placeholder="Encaminhado por: " style="margin-right: 10px;">
+                        <input class="form-control" type="number" name="periodo" placeholder="Período/turno">
                     </div>
                     <br>
                     <p style="margin: 0px;">Descrição do motivo</p>
-                    <textarea name="corpo" id="descricao_motivo" cols="30" rows="10" class="form-control" placeholder="Descrição do motivo"></textarea>
+                    <textarea name="descricao" id="descricao_motivo" cols="30" rows="10" class="form-control" placeholder="Descrição do motivo"></textarea>
                     <br>
                     <p style="margin: 0px;">Histórico(uso da medicação, faz psicoterapia,etc...)</p>
-                    <textarea name="corpo" id="historico_geral" cols="30" rows="10" class="form-control" placeholder="Histórico(uso da medicação, faz psicoterapia,etc...)"></textarea>
+                    <textarea name="historico" id="historico_geral" cols="30" rows="10" class="form-control" placeholder="Histórico(uso da medicação, faz psicoterapia,etc...)"></textarea>
                     <br>
                     <p style="margin: 0px;">Histórico Familiar</p>
-                    <textarea name="corpo" id="historico_familiar" cols="30" rows="10" class="form-control" placeholder="Historico Familiar"></textarea>
+                    <textarea name="historico_familiar" id="historico_familiar" cols="30" rows="10" class="form-control" placeholder="Historico Familiar"></textarea>
                     <br>
                     <p style="margin: 0px;">Relação Familiar</p>
-                    <textarea name="corpo" id="relação_familiar" cols="30" rows="10" class="form-control" placeholder="Relação Familiar"></textarea>
+                    <textarea name="relacao_familiar" id="relação_familiar" cols="30" rows="10" class="form-control" placeholder="Relação Familiar"></textarea>
                     <br>
-                    <button class="btn btn-success" id="botão_cadastro">Cadastrar</button>
+                    <button class="btn btn-success" id="botão_cadastro_ana">Cadastrar</button>
                 </form>
             </div>
         </div>
