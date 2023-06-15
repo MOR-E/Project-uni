@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const connection = require("./database/database");
 const bodyParser = require("body-parser");
+const session = require("express-session");
 
 //Controllers
 const homeController = require("./routes/HomeController")
@@ -16,7 +17,10 @@ const Anamnese = require("./models/Anamnese");
 const Prontuario = require("./models/Prontuario");
 const Administrador = require("./models/Administrador"); 
 
-
+//Sessions
+app.use(session({
+    secret: "tester_running", cookie: {maxAge: 30000}
+}))
 
 //View Engine
 app.set('view engine', 'ejs');

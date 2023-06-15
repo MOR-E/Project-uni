@@ -3,15 +3,35 @@
 
 <div class="container">
     <br>
-    <div class="card">
-        <div class="card-header">
-            <h2>Historico de fichas</h2>
-        </div>
-        <div class="card-body">
-            <form action="" method="POST">
-            </form>
-        </div>
+    <div class="card-header" style="width: 330px;margin: 10px 0px 10px 0px; border-radius: 7%;">
+        <h2>Historico de fichas</h2>
     </div>
+        <table class="table table-bordered bg-white text-dark">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Curso</th>
+                    <th>Período</th>
+                    <th>Contato</th>
+                    <th>Data e hora</th>
+                    <th>Ações</th>
+                </tr>
+                <tbody>
+                    <% anamnese.forEach(category => { %>
+                        <tr>
+                            <th><%=anamnese.id%></th>
+                            <th><%=anamnese.curso%></th>
+                            <th><%=anamnese.periodo%></th>
+                            <th><%=anamnese.telefone%></th>
+                            <th><%=anamnese.data_atendimento%></th>
+                        </tr>
+                    <% }) %>
+
+                </tbody>
+        </table>
+    </thead>
+
+
 </div>
 
 <%- include('../partials/footer.ejs'); %>
