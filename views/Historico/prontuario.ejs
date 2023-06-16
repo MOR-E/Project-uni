@@ -1,31 +1,33 @@
 <%- include('../partials/header.ejs'); %>
 <%- include('../partials/navbar.ejs'); %>
 
+
+
+
 <div class="container">
+
     <br>
     <div class="card-header" style="width: 330px;margin: 10px 0px 10px 0px; border-radius: 7%;">
-        <h2>Historico Anamnese</h2>
+        <h2>Historico Prontuario</h2>
     </div>
         <table class="table table-bordered bg-white text-dark">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
-                    <th>Curso</th>
-                    <th>Período</th>
-                    <th>Contato</th>
-                    <th>Data e hora</th>
+                    <th>Data do atendimento</th>
+                    <th>Responsavel</th>
+                    <th>descricao</th>
                     <th>Ações</th>
                 </tr>
                 <tbody>
-                    <% anamnese.forEach(anamnese => { %>
+                    <% prontuario.forEach(prontuario => { %>
                         <tr>
-                            <th><%=anamnese.id%></th>
-                            <th><%=anamnese.nome_paciente%></th>
-                            <th><%=anamnese.curso%></th>
-                            <th><%=anamnese.periodo%></th>
-                            <th><%=anamnese.telefone%></th>
-                            <th><%=anamnese.data_atendimento%></th>
+                            <th><%=prontuario.id%></th>
+                            <th><%=prontuario.nome_paciente%></th>
+                            <th><%=prontuario.data_atendimento%></th>
+                            <th><%=prontuario.responsavel_atendimento%></th>
+                            <th><%=prontuario.descricao%></th>
                             <th>
                                 <a href ="" class="btn btn-warning" type ="submit">Editar</a>
                                 <form action="/prontuario/deletar" method="post" style="display: inline;" onsubmit="confirmarDelecao(event, this)" type ="submit">
@@ -43,5 +45,6 @@
 
 
 </div>
+
 
 <%- include('../partials/footer.ejs'); %>

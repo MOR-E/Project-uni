@@ -3,9 +3,9 @@ const router = express.Router();
 const Administrador = require("../models/Administrador");
 const bcrypt = require("bcryptjs");
 const { and } = require("sequelize");
+const adminAuth = require("../middlewares/adminAuth"); 
 
-
-router.post("/usuario/salvar", async (req, res) => {
+router.post("/usuario/salvar" ,async (req, res) => {
   const { email, senha } = req.body;
   
   try {
@@ -25,7 +25,7 @@ router.post("/usuario/salvar", async (req, res) => {
         res.render('index');
       } else {
         // Senha incorreta
-        res.send('Senha incorreta.');
+        res.redirect('/');
       }
     } else {
       // Administrador não encontrado

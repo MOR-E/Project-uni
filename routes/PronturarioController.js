@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Prontuario = require("../models/Prontuario")
+const adminAuth = require("../middlewares/adminAuth"); 
 
-router.get("/prontuario", (req, res) => {
+router.get("/prontuario", adminAuth ,(req, res) => {
     res.render("prontuario/index");
 });
 
@@ -11,7 +12,6 @@ router.post("/prontuario/salvar", (req, res) => {
     var data_atendimento = req.body.data_atendimento;
     var responsavel_atendimento = req.body.responsavel_atendimento;
     var descricao = req.body.descricao;
-
 
     Prontuario.create({
         nome_paciente: nome_paciente,
@@ -25,6 +25,28 @@ router.post("/prontuario/salvar", (req, res) => {
         res.redirect("/home")
     })
 
+
+    
+});
+
+
+router.post("/prontuario/deletar" , (req, res) => {
+    var id = req.body.id;
+    if (id != undefined){
+        if(!isNaN(id)){ //caso seja um numero
+            Prontuario.destroy({
+                where: {
+                    id: id
+                }
+            }).then(() =>{
+                res.redirect("/prontuario/index")
+            });
+        }else{
+            res.redirect("/prontuario/index");
+        }
+    }else{ //caso seja null
+        res.redirect("/prontuario/index");
+    }
 });
 
 module.exports = router;

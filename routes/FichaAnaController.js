@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Anamnese = require("../models/Anamnese");
+const adminAuth = require("../middlewares/adminAuth"); 
 
-router.get("/fichaana", (req, res) => {
+router.get("/fichaana", adminAuth ,(req, res) => {
     res.render("Anamnese/index");
 });
 
