@@ -44,11 +44,31 @@ router.post("/anamnese/salvar", (req, res) => {
    
 
     }).then(() => {
-        res.redirect("/home");
+        res.redirect("/historicoAna");
     }).catch((err) => {
-        res.redirect("/home")
+        res.redirect("/fichaana")
     })
 
 });
+
+router.post("/ana/deletar" , (req, res) => {
+    var id = req.body.id;
+    if (id != undefined){
+        if(!isNaN(id)){ //caso seja um numero
+            Anamnese.destroy({
+                where: {
+                    id: id
+                }
+            }).then(() =>{
+                res.redirect("/historicoAna")
+            });
+        }else{
+            res.redirect("/historicoAna");
+        }
+    }else{ //caso seja null
+        res.redirect("/historicoAna");
+    }
+});
+
 
 module.exports = router;

@@ -8,7 +8,8 @@ const Prontuario = connection.define('prontuario', {
     },
     data_atendimento:{
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
+        timestamps: false
     },responsavel_atendimento:{
         type: Sequelize.STRING,
         allowNull: false
@@ -18,6 +19,6 @@ const Prontuario = connection.define('prontuario', {
     }
 })
 
-//Prontuario.sync({force: true})
+//Prontuario.sync({force: false})
 
 module.exports = Prontuario;

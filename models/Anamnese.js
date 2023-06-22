@@ -10,7 +10,8 @@ const Anamnese = connection.define('anamnese', {
         allowNull: false
     },data_atendimento:{
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
+        timestamps: false
     },responsavel_atendimento:{
         type: Sequelize.STRING,
         allowNull: false
@@ -48,6 +49,6 @@ const Anamnese = connection.define('anamnese', {
     
 })
 
-//Anamnese.sync({force: true})
+//Anamnese.sync({force: false})
 
 module.exports = Anamnese;

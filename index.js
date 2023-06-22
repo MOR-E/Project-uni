@@ -4,6 +4,9 @@ const connection = require("./database/database");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 
+
+
+
 //Controllers
 const homeController = require("./routes/HomeController")
 const fichaController = require("./routes/FichaAnaController");

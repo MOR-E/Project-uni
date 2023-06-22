@@ -1,0 +1,42 @@
+<%- include('../partials/header.ejs'); %>
+<%- include('../partials/navbar.ejs'); %>
+
+<div class="container" style="box-sizing: border-box;">
+    <div class="card-header" style="width: 360px;margin: 10px 0px 10px 0px; border-radius: 7%;">
+        <h2>Edição de pronturario</h2>
+    </div>
+        <div class="card" style="border:none;">
+            <div class="card-body" id="fundo_prontuario">
+                <form action="/prontuario/update" method="POST">
+                    <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: " value="<%= prontuario.nome_paciente%>">
+                    <br>
+                    <div style="display: flex;">
+                        <input class="form-control" type="datetime-local" name="data_atendimento" placeholder="Data de atendimento" style="margin-right: 10px;" value="">
+                        <input class="form-control" type="text" name="responsavel_atendimento" placeholder="Responsavel pelo atendimento" value="<%= prontuario.responsavel_atendimento%>">
+                    </div>
+                    <br>
+                    <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control" placeholder="Descrição do atendimento" ><%= prontuario.descricao%></textarea>
+                    <br>
+                        <input type="hidden" name="id" value="<%= prontuario.id%>">
+                        <button class="btn btn-success" id="botão_cadastro">Atualizar</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+</div>
+
+<%- include('../partials/footer.ejs'); %>
+
+<script src="../../tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#descricao",
+        plugins: [
+            'advlists autolink link image lists print preview hr searchreplace wordcount fullscream insertdatetime media save table paste emoticons'
+        ]
+    });
+
+</script>

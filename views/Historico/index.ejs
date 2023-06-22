@@ -25,14 +25,14 @@
                             <th><%=anamnese.curso%></th>
                             <th><%=anamnese.periodo%></th>
                             <th><%=anamnese.telefone%></th>
-                            <th><%=anamnese.data_atendimento%></th>
-                            <th>
+                            <th><%=formata_data(anamnese.data_atendimento)%></th>
+                            <th >
                                 <a href ="" class="btn btn-warning" type ="submit">Editar</a>
-                                <form action="/prontuario/deletar" method="post" style="display: inline;" onsubmit="confirmarDelecao(event, this)" type ="submit">
-                                    <input type="hidden" name="id" value="">
+                                <form action="/ana/deletar" method="post" style="display: inline;" onsubmit="confirmarDelecao(event, this)" type ="submit">
+                                    <input type="hidden" name="id" value="<%- anamnese.id%>">
                                     <button class="btn btn-danger" type ="submit">Deletar</button>
-                                    <button class="btn btn-success" type ="submit">Baixar</button>
                                 </form>
+                                <button class="btn btn-success" type ="submit">Baixar</button>
                             </th>
                         </tr>
                     <% }) %>
@@ -45,3 +45,15 @@
 </div>
 
 <%- include('../partials/footer.ejs'); %>
+
+<script>
+
+    function confirmarDelecao(event, form) {
+        event.preventDefault();
+        var decision = confirm("Você quer excluir essa categoria?")
+        if (decision){
+            form.submit();
+        }
+    }
+    
+</script>

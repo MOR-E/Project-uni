@@ -22,8 +22,8 @@ Administrador.hasMany(Anamnese);
 
 Administrador.hasMany(Prontuario);
 
-//Administrador.sync({force: true});
-//Anamnese.sync({force: true});
-//Prontuario.sync({force: true});
+Administrador.sync({force: false});
+Anamnese.sync({force: false});
+Prontuario.sync({force: false});
 
 module.exports = Administrador;
