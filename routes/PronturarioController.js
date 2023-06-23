@@ -49,6 +49,15 @@ router.post("/prontuario/deletar" , (req, res) => {
     }
 });
 
+function formata_datatime (date) {
+    let data = date;
+
+    let formataDatatime = data.getFullYear() + "-" + ("0" + (data.getMonth() + 1)).slice(-2) + "-" + ("0" + data.getDate()).slice(-2)  +
+     "T" +  data.getHours() + ":" + ("0" + (data.getMinutes())).slice(-2); 
+
+    return formataDatatime;
+}
+
 router.get("/prontuario/edit/:id", (req, res) => { 
     var id = req.params.id;
         if(isNaN(id)) {
@@ -56,7 +65,7 @@ router.get("/prontuario/edit/:id", (req, res) => {
         }
         Prontuario.findByPk(id).then(prontuario => {
         if(prontuario != undefined){
-            res.render("prontuario/edit",{prontuario: prontuario});
+            res.render("prontuario/edit",{prontuario: prontuario, formata_datatime: formata_datatime});
         }else{
             res.redirect("/historicoProntu");
         }
@@ -72,7 +81,8 @@ router.post("/prontuario/update", (req,res) => {
     var descricao = req.body.descricao;
     var id = req.body.id;
 
-    Prontuario.update({nome_paciente: nome_paciente,
+    Prontuario.update({
+        nome_paciente: nome_paciente,
         data_atendimento: data_atendimento,
         responsavel_atendimento: responsavel_atendimento,
         descricao: descricao,}, {

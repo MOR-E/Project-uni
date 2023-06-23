@@ -1,0 +1,72 @@
+<%- include('../partials/header.ejs'); %>
+<%- include('../partials/navbar.ejs'); %>
+
+<div class="container">
+    <div class="card-header" style="width: 300px;margin: 10px 0px 10px 0px; border-radius: 7%;">
+        <h2>Edição de ficha de Anamnese</h2>
+    </div>
+        <div class="card" style="border:none; border-radius: 7%;">
+            <div class="card-body" id="fundo_prontuario">
+                <form action="/anamnese/update" method="POST">
+                    <input type="hidden" name="id" value="<%= anamnese.id %>">
+                    <br>
+                    <div style="display: flex;">
+                        <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: " style="margin-right: 10px;" value="<%= anamnese.nome_paciente%>">
+                        <input class="form-control" type="number" name="idade_paciente" placeholder="Idade do paciente" value="<%= anamnese.idade %>">
+                    </div>
+                    <br>
+                    <p style="margin: 0px;">Data de atendimento</p>
+                    <div style="display: flex;">
+                        <input class="form-control" type="datetime-local" name="data_atendimento" style="margin-right: 10px;" value="<%= formata_datatime(anamnese.data_atendimento)%>">
+                        <input class="form-control" type="text" name="responsavel_atendimento" placeholder="Responsavel pelo atendimento" value="<%= anamnese.responsavel_atendimento%>">
+                    </div>
+                    <br>
+                    <input type="text" class="form-control" name="curso_paciente" placeholder="Curso" value="<%= anamnese.curso%>">
+                    <br>
+                    <input type="email" class="form-control" name="email_paciente" placeholder="Email" value="<%= anamnese.email%>">
+                    <br>
+                    <p style="margin: 0px;">Data de nascimento</p>
+                    <div style="display: flex; ">
+                        <input type="datetime-local" class="form-control" name="data_nascimento" style="margin-right: 10px;" value="<%= formata_datatime(anamnese.data_nascimento)%>">
+                        <input class="form-control" type="number" name="telefone" placeholder="Telefone" value="<%= anamnese.periodo%>">
+                    </div>
+                    <br>
+                    <div style="display: flex;">
+                        <input type="text" class="form-control" name="encaminhado" placeholder="Encaminhado por: " style="margin-right: 10px;" value="<%= anamnese.encaminhado%>">
+                        <input class="form-control" type="number" name="periodo" placeholder="Período/turno" value="<%= anamnese.periodo%>">
+                    </div>
+                    <br>
+                    <p style="margin: 0px;">Descrição do motivo</p>
+                    <textarea name="descricao" id="descricao_motivo" cols="30" rows="10" class="form-control" placeholder="Descrição do motivo"><%= anamnese.descricao%></textarea>
+                    <br>
+                    <p style="margin: 0px;">Histórico(uso da medicação, faz psicoterapia,etc...)</p>
+                    <textarea name="historico" id="historico_geral" cols="30" rows="10" class="form-control" placeholder="Histórico(uso da medicação, faz psicoterapia,etc...)"><%= anamnese.historico%></textarea>
+                    <br>
+                    <p style="margin: 0px;">Histórico Familiar</p>
+                    <textarea name="historico_familiar" id="historico_familiar" cols="30" rows="10" class="form-control" placeholder="Historico Familiar"><%= anamnese.historico_familiar%></textarea>
+                    <br>
+                    <p style="margin: 0px;">Relação Familiar</p>
+                    <textarea name="relacao_familiar" id="relação_familiar" cols="30" rows="10" class="form-control" placeholder="Relação Familiar"><%= anamnese.relacao_familiar%></textarea>
+                    <br>
+                    <button class="btn btn-success" id="botão_cadastro_ana">Atualizar</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+</div>
+
+<script src="../../tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#descricao_motivo, #historico_geral, #historico_familiar, #relação_familiar",   
+        plugins: [
+            'advlists autolink link image lists print preview hr searchreplace wordcount fullscream insertdatetime media save table paste emoticons'
+        ]
+    });
+
+</script>
+
+<%- include('../partials/footer.ejs'); %>

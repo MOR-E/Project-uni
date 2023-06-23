@@ -13,7 +13,7 @@ const fichaController = require("./routes/FichaAnaController");
 const prontuarioController = require("./routes/PronturarioController");
 const historicoController = require("./routes/HistoricoController");
 const adminConstroller = require("./routes/adminController")
-
+const createPdfRouter = require("./routes/baixar")
 
 //Models
 const Anamnese = require("./models/Anamnese");
@@ -22,7 +22,7 @@ const Administrador = require("./models/Administrador");
 
 //Sessions
 app.use(session({
-    secret: "tester_running", cookie: {/*maxAge: 30000*/}
+    secret: "tester_running", cookie: {maxAge: 30000}
 }))
 
 //View Engine
@@ -56,14 +56,15 @@ app.use("/", historicoController);
 
 app.use("/", adminConstroller)
 
+app.use("/", createPdfRouter)
 
 app.get("/", (req, res) => {
     res.render("usuario/login")
 });  
 
 
-
-app.listen(8001, ()=>{
+const port = process.env.PORT || 3000;
+app.listen(port,"0.0.0.0", ()=>{
     console.log("Aplicação rodando!")
 })
 

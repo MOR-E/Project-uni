@@ -7,11 +7,10 @@ const Anamnese = connection.define('anamnese', {
         allowNull: false
     },idade:{
         type: Sequelize.INTEGER,
-        allowNull: false
+
     },data_atendimento:{
         type: Sequelize.DATE,
-        allowNull: false,
-        timestamps: false
+        allowNull: true
     },responsavel_atendimento:{
         type: Sequelize.STRING,
         allowNull: false
@@ -23,7 +22,7 @@ const Anamnese = connection.define('anamnese', {
         allowNull: false
     },data_nascimento:{
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: true
     },telefone:{
         type: Sequelize.INTEGER,
         allowNull: false

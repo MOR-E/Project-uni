@@ -18,7 +18,7 @@
 
     <br>
     <div class="card-header" style="width: 330px;margin: 10px 0px 10px 0px; border-radius: 7%;">
-        <h2>Historico Prontuario</h2>
+        <h2>Histórico Prontuario</h2>
     </div>
         <table class="table table-bordered bg-white text-dark">
             <thead>
@@ -44,7 +44,11 @@
                                     <input type="hidden" name="id" value="<%-prontuario.id%>">
                                     <button class="btn btn-danger" type ="submit">Deletar</button>
                                 </form>
-                                <button class="btn btn-success" type ="submit">Baixar</button>
+                                <form action="/prontuario/baixar/<%=prontuario.id%>" style="display: inline;" method="post">
+                                    <button class="btn btn-success" type ="submit">Baixar</button>
+                                </form>
+    
+                                
                             </th>
                         </tr>
                     <% }) %>

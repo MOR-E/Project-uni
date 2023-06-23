@@ -8,8 +8,8 @@ const adminAuth = require("../middlewares/adminAuth");
 function formata_data (date) {
     let data = date;
 
-    let dataFormatada = ((data.getDate() )) + "/" + ("0" + (data.getMonth() + 1)).slice(-2) +
-     "/" + data.getFullYear() + " as " + data.getHours() + ":" + data.getMinutes(); 
+    let dataFormatada = ("0" + (data.getDate() )).slice(-2) + "/" + ("0" + (data.getMonth() + 1)).slice(-2) +
+     "/" + data.getFullYear() + " as " + data.getHours() + ":" + ("0" + (data.getMinutes())).slice(-2); 
 
     return dataFormatada;
 }
@@ -17,7 +17,7 @@ function formata_data (date) {
 router.get("/historicoAna", adminAuth ,(req, res) => {
 
         Anamnese.findAll().then(anamnese => {
-            res.render("Historico/index", {anamnese: anamnese, formata_data: formata_data});
+            res.render("Historico/anamnese", {anamnese: anamnese, formata_data: formata_data});
         });
     
 });

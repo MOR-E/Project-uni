@@ -11,7 +11,7 @@
                     <input type="text" class="form-control" name="nome_paciente" placeholder="Insira o nome do paciente: " value="<%= prontuario.nome_paciente%>">
                     <br>
                     <div style="display: flex;">
-                        <input class="form-control" type="datetime-local" name="data_atendimento" placeholder="Data de atendimento" style="margin-right: 10px;" value="">
+                        <input class="form-control" type="datetime-local" name="data_atendimento" placeholder="Data de atendimento" style="margin-right: 10px;" value="<%= formata_datatime(prontuario.data_atendimento)%>">
                         <input class="form-control" type="text" name="responsavel_atendimento" placeholder="Responsavel pelo atendimento" value="<%= prontuario.responsavel_atendimento%>">
                     </div>
                     <br>
