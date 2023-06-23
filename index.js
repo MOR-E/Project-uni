@@ -22,7 +22,7 @@ const Administrador = require("./models/Administrador");
 
 //Sessions
 app.use(session({
-    secret: "tester_running", cookie: {maxAge: 30000}
+    secret: "tester_running", cookie: {/*maxAge: 30000*/}
 }))
 
 //View Engine
